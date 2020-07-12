@@ -54,7 +54,11 @@ get_header();
 
 	<div class="row">
 		<div class="col-lg-4 category-post">
-			<?php $category_link = get_category_link( 2 );?>
+		<?php 
+   			$idObj = get_category_by_slug('player-stories'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
 			<a class="cat-link" href="<?php echo $category_link;?>">			
 				<div class="cat-title">Player Stories</div>
 			</a>
@@ -62,7 +66,7 @@ get_header();
 				<?php 
 				$recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
-					'category' => 2,
+					'category' => $id,
 					'post_status' => 'publish'
 				));				
 				foreach($recent_player_posts as $post): 
@@ -84,14 +88,18 @@ get_header();
 
 
 		<div class="col-lg-4 category-post">
-			<?php $category_link = get_category_link( 5 );?>
+		<?php 
+   			$idObj = get_category_by_slug('hall-of-fame'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
 			<a class="cat-link" href="<?php echo $category_link;?>">
 				<div class="cat-title">Hall Of Fame</div>
 			</a>
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
-					'category' => 5,
+					'category' => $id,
 					'post_status' => 'publish'
 				));
 				foreach($recent_player_posts as $post): 
@@ -112,14 +120,18 @@ get_header();
 		</div>
 
 		<div class="col-lg-4 category-post">
-			<?php $category_link = get_category_link( 4 );?>
+		<?php 
+   			$idObj = get_category_by_slug('world-series'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
 			<a class="cat-link" href="<?php echo $category_link;?>">
 				<div class="cat-title">World Series</div>
 			</a>
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
-					'category' => 4,
+					'category' => $id,
 					'post_status' => 'publish'
 				));
 					foreach($recent_player_posts as $post): 
