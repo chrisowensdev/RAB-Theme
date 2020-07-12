@@ -26,7 +26,9 @@
 					};
           ?>
         
-				  <img class="logo" src="<?php echo $logo[0] ?>" alt="logo" ></a>
+          <!-- <img class="logo" src="<?php## echo $logo[0] ?>" alt="logo" >-->
+          <img class="logo" src="<?php echo home_url();?>/wp-content/themes/RAB-Theme-master/assets/images/RAB-logo-150x150.jpg" alt="logo" />
+        </a>
         </div>
         <div class="header-title">A Blog for The Thinking Fan</div>
         <div class="social-icons">
