@@ -69,4 +69,5 @@ function rab_widget_areas(){
 }
 
 add_action( 'widgets_init', 'rab_widget_areas');
+
 ?>

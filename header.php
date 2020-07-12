@@ -30,6 +30,7 @@
         </div>
         <div class="header-title">A Blog for The Thinking Fan</div>
         <div class="social-icons">
+          <p>Follow us: </p>
         <a href=""><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
         <a href="https://twitter.com/RmntcBaseball"><i class="fab fa-twitter" aria-hidden="true"></i></a>
 

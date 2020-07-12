@@ -1,6 +1,6 @@
 <div class="container single-page-content">
 	<header class="content-header">
-    <div class="single-page-title"><?php the_title();?></div>
+    <div class="single-post-title"><?php the_title();?></div>
     <div class="main-image"><img src="<?php the_post_thumbnail_url('full');?>" /></div>
     <div class="meta mb-3">
       <span class="date"><?php the_date();?></span>
