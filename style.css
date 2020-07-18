@@ -106,9 +106,11 @@ body {
 .header-screen {
   height: 101%;
   width: 100%;
-  background-image: linear-gradient(to right,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0.2)
+  );
   border-bottom: 12px black;
 }
 
@@ -426,6 +428,10 @@ a {
   background-color: white;
 }
 
+.comment {
+  margin-left: 20px;
+}
+
 /* Footer */
 
 footer {
@@ -451,6 +457,11 @@ footer a {
 
 .media-body {
   flex-wrap: wrap;
+}
+
+.meta a {
+  color: #d53;
+  margin: 0 5px;
 }
 
 @media only screen and (max-width: 920px) {
@@ -529,7 +540,8 @@ footer a {
     position: relative;
   }
 
-  .category-content {}
+  .category-content {
+  }
 
   .cat-link-image {
     display: inline-block;
