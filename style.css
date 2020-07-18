@@ -15,6 +15,10 @@ body {
   background-color: #666a61;
 }
 
+.container {
+  max-width: 1300px;
+}
+
 .menu-button {
   color: #fff;
   background-color: #d53;
@@ -240,6 +244,7 @@ a {
 }
 
 .category-post {
+  margin-bottom: 5px;
   border-radius: 4px;
   animation-name: catPostIn;
   animation-duration: 1.5s;
@@ -394,7 +399,7 @@ a {
 /* Single Page Content */
 .single-page-content {
   background-color: #fff;
-  padding: 0;
+  padding: 10px 50px;
 }
 
 .single-page-title {
@@ -432,6 +437,20 @@ footer {
 footer a {
   color: #fff;
   text-decoration: none;
+}
+
+/* Archive */
+
+.media a {
+  color: #d53;
+}
+
+.date {
+  margin-right: 100px;
+}
+
+.media-body {
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 920px) {
@@ -564,5 +583,9 @@ footer a {
   .main-post-body {
     width: 90%;
     margin: 10px auto;
+  }
+
+  .date {
+    display: block;
   }
 }

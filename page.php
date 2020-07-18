@@ -4,7 +4,7 @@ get_header();
 		
 <div class="container">
 	<div class="row">
-		<div class="col-lg-9 main-screen">
+		<div class="col-xl-9 col-lg-9 main-screen">
             <div class="single-page-content">
             <?php
 		if( have_posts() ){

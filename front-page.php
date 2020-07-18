@@ -16,7 +16,8 @@ get_header();
 						foreach($recent_posts as $post) : 
 						$post_image_url = get_the_post_thumbnail_url($post['ID'], 'medium_large');
 						$author_id = get_post_field( 'post_author', $post_id );
-						$author_name = get_the_author_meta('user_nicename', $author_id);
+						$author_first_name = get_the_author_meta('first_name', $author_id);
+						$author_last_name = get_the_author_meta('last_name', $author_id);
 
 						
 					?>
@@ -36,7 +37,7 @@ get_header();
 
 								<h6 class="main-post-sub_heading">
 									<div class="main-post-date"><?php echo get_the_date('', $post['ID']);?></div> 
-									<div class="main-post-author">By: <?php echo $author_name;?></div>
+									<div class="main-post-author">By: <?php echo $author_first_name . ' ' . $author_last_name;?></div>
 								</h6>
 
 								<?php echo get_the_excerpt($post['ID']);
@@ -155,6 +156,110 @@ get_header();
 		</div>
 
 	</div>	
+	</div>
+	<div class="row">
+		<div class="col-lg-4 category-post">
+		<?php 
+   			$idObj = get_category_by_slug('countdowns-and-lists'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
+			<a class="cat-link" href="<?php echo $category_link;?>">			
+				<div class="cat-title">Countdowns and Lists</div>
+			</a>
+				
+				<?php 
+				$recent_player_posts = wp_get_recent_posts(array(
+					'numberposts' => 1,
+					'category' => $id,
+					'post_status' => 'publish'
+				));				
+				foreach($recent_player_posts as $post): 
+				?>
+				
+			<a href="<?php echo get_permalink($post['ID']) ?>">
+				<div class="category-content">
+					<div class="cat-link-image">
+						<?php echo get_the_post_thumbnail($post['ID'], 'thumbnail'); ?>
+					</div>
+					<div class="cat-post-title-area">
+						<h6 class="cat-post-title"><?php echo $post['post_title'] ?></h6>
+					</div>
+				</div>				
+			</a>
+					
+				<?php endforeach; wp_reset_query(); ?>
+		</div>
+
+
+		<div class="col-lg-4 category-post">
+		<?php 
+   			$idObj = get_category_by_slug('editorial'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
+			<a class="cat-link" href="<?php echo $category_link;?>">
+				<div class="cat-title">Editorial</div>
+			</a>
+
+				<?php $recent_player_posts = wp_get_recent_posts(array(
+					'numberposts' => 1,
+					'category' => $id,
+					'post_status' => 'publish'
+				));
+				foreach($recent_player_posts as $post): 
+				?>
+
+			<a href="<?php echo get_permalink($post['ID']) ?>">
+				<div class="category-content">
+					<div class="cat-link-image">
+						<?php echo get_the_post_thumbnail($post['ID'], 'thumbnail'); ?>
+					</div>
+					<div class="cat-post-title-area">
+						<h6 class="cat-post-title"><?php echo $post['post_title'] ?></h6>
+					</div>
+				</div>
+			</a>
+
+				<?php endforeach; wp_reset_query(); ?>
+		</div>
+
+		<div class="col-lg-4 category-post">
+		<?php 
+   			$idObj = get_category_by_slug('book-review'); 
+   			$id = $idObj->term_id;
+		?>
+			<?php $category_link = get_category_link( $id );?>
+			<a class="cat-link" href="<?php echo $category_link;?>">
+				<div class="cat-title">Book Review</div>
+			</a>
+
+				<?php $recent_player_posts = wp_get_recent_posts(array(
+					'numberposts' => 1,
+					'category' => $id,
+					'post_status' => 'publish'
+				));
+					foreach($recent_player_posts as $post): 
+						?>
+		
+					<a href="<?php echo get_permalink($post['ID']) ?>">
+						<div class="category-content">
+							<div class="cat-link-image">
+								<?php echo get_the_post_thumbnail($post['ID'], 'thumbnail'); ?>
+							</div>
+							<div class="cat-post-title-area">
+								<h6 class="cat-post-title"><?php echo $post['post_title'] ?></h6>
+							</div>
+						</div>
+					</a>
+		
+						<?php endforeach; wp_reset_query(); ?>
+				
+				
+
+		</div>
+
+		
 	</div>
 	<div class="row">
 	<div class="col-lg-6 sub-section">

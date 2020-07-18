@@ -1,11 +1,12 @@
 <?php
 get_header();
 ?>
-    
-
-		<article class="content px-3 py-5 p-md-5">
-
-	<?php
+		
+<div class="container">
+	<div class="row">
+		<div class="col-xl-9 col-lg-9 main-screen">
+            <div class="single-page-content">
+            <?php
 		if( have_posts() ){
 
 			while( have_posts() ) {
@@ -18,9 +19,18 @@ get_header();
 		}
 	?>
 
-	    </article>
+            </div>
+	
+        </div>
 
-    
+        <div class="col-lg-3 main-sidebar-right">
+            <?php dynamic_sidebar('sidebar-1');?>
+        </div>
+    </div>
+</div>
+
+
+		
 <?php 
 get_footer();
 ?>
