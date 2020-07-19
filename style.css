@@ -432,6 +432,11 @@ a {
   margin-left: 20px;
 }
 
+.content img {
+  width: 100%;
+  height: auto;
+}
+
 /* Footer */
 
 footer {
@@ -599,5 +604,13 @@ footer a {
 
   .date {
     display: block;
+  }
+
+  .single-post-title {
+    font-size: 24px;
+  }
+
+  .single-page-content {
+    padding: 10px 20px;
   }
 }
