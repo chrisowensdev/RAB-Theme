@@ -70,4 +70,21 @@ function rab_widget_areas(){
 
 add_action( 'widgets_init', 'rab_widget_areas');
 
+function set_offset($id, $main_post_id){
+  $offset_post = wp_get_recent_posts(array(
+    'numberposts' => 1,
+    'category' => $id,
+    'post_status' => 'publish'
+  ));
+  $offset_post_id;
+  foreach($offset_post as $post):
+    $offset_post_id = $post['ID'];
+  endforeach;	
+  if ($offset_post_id === $main_post_id) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 ?>

@@ -9,16 +9,17 @@ get_header();
 				<div class="latest-post" >
 					<h5>Latest Post</h5>
 					<?php
-						$recent_posts = wp_get_recent_posts(array(
+						$main_post_id;
+						$top_recent_posts = wp_get_recent_posts(array(
 							'numberposts' => 1, // Number of recent posts thumbnails to display
 							'post_status' => 'publish' // Show only the published posts
 						));
-						foreach($recent_posts as $post) : 
+						foreach($top_recent_posts as $post) : 
 						$post_image_url = get_the_post_thumbnail_url($post['ID'], 'medium_large');
 						$author_id = get_post_field( 'post_author', $post_id );
 						$author_first_name = get_the_author_meta('first_name', $author_id);
 						$author_last_name = get_the_author_meta('last_name', $author_id);
-
+						$main_post_id = $post['ID'];
 						
 					?>
 						
@@ -64,9 +65,10 @@ get_header();
 				<div class="cat-title">Player Stories</div>
 			</a>
 				
-				<?php 
+				<?php 			
 				$recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));				
@@ -79,7 +81,7 @@ get_header();
 						<?php echo get_the_post_thumbnail($post['ID'], 'thumbnail'); ?>
 					</div>
 					<div class="cat-post-title-area">
-						<h6 class="cat-post-title"><?php echo $post['post_title'] ?></h6>
+						<h6 class="cat-post-title"><?php echo $main_post_id; echo $offset_post_id; ?></h6>
 					</div>
 				</div>				
 			</a>
@@ -100,6 +102,7 @@ get_header();
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));
@@ -132,6 +135,7 @@ get_header();
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));
@@ -171,6 +175,7 @@ get_header();
 				<?php 
 				$recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));				
@@ -204,6 +209,7 @@ get_header();
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));
@@ -236,6 +242,7 @@ get_header();
 
 				<?php $recent_player_posts = wp_get_recent_posts(array(
 					'numberposts' => 1,
+					'offset' => set_offset($id, $main_post_id),
 					'category' => $id,
 					'post_status' => 'publish'
 				));
